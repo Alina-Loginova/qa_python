@@ -7,3 +7,4 @@
 # игнорировать папки:
 venv
 .pytest_cache
+.idea
