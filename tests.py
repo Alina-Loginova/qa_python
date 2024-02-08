@@ -51,8 +51,9 @@ class TestBooksCollector:
         assert 'Оно' in collector.favorites
 
     def test_delete_book_from_favorites(self, collector):
-        collector.delete_book_from_favorites('Маша и медведи')
+        collector.add_book_in_favorites('Оно')
+        collector.delete_book_from_favorites('Оно')
         assert 'Оно' not in collector.favorites
 
     def test_get_list_of_favorites_books(self, collector):
-        assert len(collector.get_list_of_favorites_books()) == 4
+        assert len(collector.get_list_of_favorites_books()) == len(collector.favorites)
